@@ -35,11 +35,30 @@ datasets:
       plots:
         imr_data:
           peaktime_H1_IMRPhenomPv2.txt:
+  10.5072/zenodo.1153213:
+    destination: src/data
+    contents:
+      figure1.tar.gz:
+        figure1:
+          pyring_t0-bad_timestamps-bad_seglen-bad:
+            result.nc:
+          pyring_t0-good_timestamps-good_seglen-good:
+            result.nc:
+          ringdown_t0-bad_timestamps-good_seglen-bad:
+            result.nc:
+          ringdown_t0-bad_timestamps-good_seglen-good:
+            result.nc:
+          ringdown_t0-good_timestamps-good_seglen-good:
+            result.nc:
 
 # Custom file dependencies
 dependencies:
-  # src/scripts/my_script.py:
-  #   - src/data/dataset_for_my_script.dat
+  src/scripts/figure1.py:
+    - data/figure1/figure1/pyring_t0-bad_timestamps-bad_seglen-bad/result.nc
+    - data/figure1/figure1/pyring_t0-good_timestamps-good_seglen-good/result.nc
+    - data/figure1/figure1/ringdown_t0-bad_timestamps-good_seglen-bad/result.nc
+    - data/figure1/figure1/ringdown_t0-bad_timestamps-good_seglen-good/result.nc
+    - data/figure1/figure1/ringdown_t0-good_timestamps-good_seglen-good/result.nc
   # src/tex/ms.tex:
   #   - src/tex/stylesheet.tex
 
