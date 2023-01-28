@@ -1,3 +1,26 @@
+#! /usr/bin/env python
+
+# -*- coding: utf-8 -*-
+#
+#       Copyright 2023
+#       Maximiliano Isi <max.isi@ligo.org>
+#       Will M. Farr <will.farr@ligo.org>
+#
+#       This program is free software; you can redistribute it and/or modify
+#       it under the terms of the GNU General Public License as published by
+#       the Free Software Foundation; either version 2 of the License, or
+#       (at your option) any later version.
+#
+#       This program is distributed in the hope that it will be useful,
+#       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#       GNU General Public License for more details.
+#
+#       You should have received a copy of the GNU General Public License
+#       along with this program; if not, write to the Free Software
+#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#       MA 02110-1301, USA.
+
 import numpy as np
 from scipy.stats import gaussian_kde
 
@@ -26,45 +49,6 @@ def compute_hpd(samples, p=0.68, out="both"):
     elif out.lower() == "low":
         return sorted_samples[i]
     
-def hpd_interval(xs, q):
-    xs = np.sort(xs)
-    N = len(xs)
-    n = int(round(q*N))
-
-    intmin = -1
-    length = inf
-    for i in range(0, N-n+1):
-        l = xs[i+n-1]-xs[i]
-        if l < length:
-            intmin = i
-            length = l
-    return xs[intmin], xs[intmin+n-1]
-
-def q_of_zero(xs):
-    xs = sort(xs)
-    xmin = np.min(xs)
-
-    qshort = 0.01
-    assert hpd_interval(xs, qshort)[0] > xmin, '50% interval does not contain origin!'
-    qlong = 1.0
-    while qlong - qshort > 0.005:
-        qmid = 0.5*(qshort+qlong)
-        l,h = hpd_interval(xs, qmid)
-
-        if l == xmin:
-            qlong = qmid
-        else:
-            qshort = qmid
-    return 0.5*(qshort+qlong)
-
-def hpd_zero_p_value(xs):
-    kde = gaussian_kde(xs)
-    p0 = kde(0) # Bounded?
-    pxs = kde(xs)
-    n = np.sum(pxs < p0)
-    return n/len(xs)
-
-
 def get_hpd_from_grid(x, q=0.68, A_min=0):
     xs = x.sort_values(ascending=False)
     d = x.index[1] - x.index[0]
@@ -93,13 +77,3 @@ def get_quantile_from_grid(x, q=0.5, return_q=False):
     else:
         return i
     
-def get_sym_from_grid(x, q=0.68):
-    xs = x.sort_index(ascending=True)
-    d = x.index[1] - x.index[0]
-    # integrate from left and right until reaching half of the unenclosed prob
-    p = (1 - q)/2
-    cdf = np.cumsum(xs)*d
-    cdf /= max(cdf)
-    l = (np.abs(cdf - p)).idxmin()
-    h = (np.abs(1 - cdf - p)).idxmin()
-    return l, h
