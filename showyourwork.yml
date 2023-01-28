@@ -59,6 +59,8 @@ dependencies:
     - src/data/figure1/figure1/ringdown_t0-bad_timestamps-good_seglen-bad/result.nc
     - src/data/figure1/figure1/ringdown_t0-bad_timestamps-good_seglen-good/result.nc
     - src/data/figure1/figure1/ringdown_t0-good_timestamps-good_seglen-good/result.nc
+  src/scripts/figure2.py:
+    - src/data/fm_t0_kde_grid.h5
   # src/tex/ms.tex:
   #   - src/tex/stylesheet.tex
 
