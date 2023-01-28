@@ -25,9 +25,16 @@ dag:
 
 # Externally-hosted datasets, e.g. on Zenodo
 datasets:
-  # 10.5281/zenodo.6468327:
-  #   contents:
-  #     TOI640b.json: src/data/TOI640b.json
+  10.5281/zenodo.6949492:
+    destination: src/data/finch_moore
+    contents:
+      posterior_samples:
+        GW150914:
+          3W220221:
+            posterior_samples.dat:
+      plots:
+        imr_data:
+          peaktime_H1_IMRPhenomPv2.txt:
 
 # Custom file dependencies
 dependencies:
