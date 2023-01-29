@@ -178,7 +178,8 @@ for ax in axs:
     ax.legend();
 
 plt.subplots_adjust(hspace=0)
-axs[0].tick_params(direction='in')
+for ax in list(axs) + [ax_top]:
+    ax.tick_params(direction='in')
 
 figpath = os.path.join(paths.figures, "a1_time_variation.pdf")
 plt.savefig(figpath, bbox_inches='tight')

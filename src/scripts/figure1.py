@@ -95,8 +95,11 @@ inset_kws = {
 plot_curves(inset_kws, axins)
 
 plt.subplots_adjust(hspace=0)
+fig.canvas.draw()
+yl = [tick.get_text() for tick in axins.get_yticklabels()]
+axins.set_yticklabels(yl[:-2])
+axins.tick_params(direction='in')
 ax.tick_params(direction='in', labelbottom=False)
-axins.set_yticks(axins.get_yticks()[:-2])
 axins.set_xlabel(r'$A_1\, /\, 10^{{{}}}$'.format(plot_scale_exp))
 
 for a in [ax, axins]:

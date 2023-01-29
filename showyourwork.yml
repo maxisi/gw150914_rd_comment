@@ -66,6 +66,8 @@ dependencies:
     - src/data/figure1/figure1/ringdown_t0-good_timestamps-good_seglen-good/result.nc
   src/scripts/figure2.py:
     - src/data/fm_t0_kde_grid.h5
+  src/scripts/finchmoore1.py:
+    - src/data/finch_moore/posterior_samples/GW150914/3W220221/posterior_samples.dat
   # src/tex/ms.tex:
   #   - src/tex/stylesheet.tex
 
