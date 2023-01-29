@@ -1,3 +1,6 @@
+A Comment on [Cotesta et al (2022)](https://arxiv.org/abs/2201.00822). This manuscript was created using the [showyourwork](https://github.com/showyourwork/showyourwork) workflow, so that figures in the manuscript link directly to the scripts that created them.
+All code and data to reproduce these results are publicly available here and in Zenodo.
+
 <p align="center">
 <a href="https://github.com/showyourwork/showyourwork">
 <img width = "450" src="https://raw.githubusercontent.com/showyourwork/.github/main/images/showyourwork.png" alt="showyourwork"/>
@@ -15,4 +18,12 @@
 </a>
 </p>
 
-An open source scientific article created using the [showyourwork](https://github.com/showyourwork/showyourwork) workflow.
+_More about showyourwork_: This study was carried out using the reproducibility software
+[showyourwork](https://github.com/showyourwork/showyourwork), which leverages continuous integration to
+programmatically download the data from [zenodo.org](https://zenodo.org/), create the figures, and
+compile the manuscript. Each figure caption contains two links: one
+to the dataset stored on zenodo used in the corresponding figure,
+and the other to the script used to make the figure (at the commit
+corresponding to the current build of the manuscript). The datasets
+are stored at https://doi.org/XXXXXX.
+
