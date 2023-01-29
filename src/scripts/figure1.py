@@ -23,7 +23,7 @@
 
 from matplotlib import pyplot as plt
 import os
-import arviz as az
+import pickle as pkl
 import seaborn as sns
 from utils.constants import *
 import utils.plots as pu
@@ -42,14 +42,9 @@ keys = [
     "ringdown_t0-bad_timestamps-good_seglen-good",
 ]
 
-path_template = os.path.join(paths.data, "figure1/figure1/{}/result.nc")
-results = {k: az.from_netcdf(path_template.format(k)) for k in keys}
-
-# sometime HMC chains get stuck and must be removed from the result;
-# indicate such chains here, if any
-bad_chains = {
-    "ringdown_t0-bad_timestamps-good_seglen-good": [2],
-}
+fname = paths.data / 'fig1_samples_dict.pkl'
+with open(fname, 'rb') as f:
+    samples = pkl.load(f)
 
 # ----------------------------------------------------------------------------
 # PLOT
@@ -58,13 +53,7 @@ plot_scale_exp = -20
 
 def plot_curves(plot_kws, ax):
     for k, kws in plot_kws.items():
-        r = results[k]
-        c = [i for i in range(r.posterior.dims['chain'])
-             if i not in bad_chains.get(k, [])]
-        if 'A1' in r.posterior:
-            x = A_scale_pr*r.posterior.A1[c,:].values.flatten()
-        else:
-            x = A_scale*r.posterior.A[c,:,1].values.flatten()
+        x = samples[k]
         sns.histplot(x/10**plot_scale_exp, element='step', fill=False,
                      stat='density', ax=ax, **kws)
 

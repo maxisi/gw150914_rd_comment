@@ -60,11 +60,7 @@ datasets:
 # Custom file dependencies
 dependencies:
   src/scripts/figure1.py:
-    - src/data/figure1/figure1/pyring_t0-bad_timestamps-bad_seglen-bad/result.nc
-    - src/data/figure1/figure1/pyring_t0-good_timestamps-good_seglen-good/result.nc
-    - src/data/figure1/figure1/ringdown_t0-bad_timestamps-good_seglen-bad/result.nc
-    - src/data/figure1/figure1/ringdown_t0-bad_timestamps-good_seglen-good/result.nc
-    - src/data/figure1/figure1/ringdown_t0-good_timestamps-good_seglen-good/result.nc
+    - src/data/fig1_samples_dict.pkl
   src/scripts/figure2.py:
     - src/data/fm_t0_kde_grid.h5
   src/scripts/finchmoore1.py:
