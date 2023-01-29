@@ -37,7 +37,7 @@ t_ref = 1126259462.423/conversion
 
 usecols = ['t_0 - t_ref [s] [Hanford]', 'A_rd_1', 'M_f [M_sun]', 'chi_f']
 
-N1_dir = os.path.join(paths.data, 'finch_moore/posterior_samples/GW150914/3W220221')
+N1_dir = os.path.join(paths.data, 'finch_moore/dataset/posterior_samples/GW150914/3W220221')
 posterior = pd.read_csv(f'{N1_dir}/posterior_samples.dat', usecols=usecols)
 t0_Hanford_posterior = posterior['t_0 - t_ref [s] [Hanford]'].to_numpy()/conversion
 A1_posterior = posterior['A_rd_1'].to_numpy()*1e21
