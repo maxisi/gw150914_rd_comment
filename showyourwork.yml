@@ -4,7 +4,7 @@ cache_on_zenodo: true
 # Workflow graph (DAG) generation
 dag:
   # Generate `dag.pdf` on each build?
-  render: false
+  render: true
   # Graphviz layout engine
   engine: sfdp
   # Group files by type into plates?
@@ -19,8 +19,10 @@ dag:
     penwidth: "2"
     width: "1"
   # Files and glob patterns to ignore
-  # ignore_files:
-  #  - src/tex/orcid-ID.png
+  ignore_files:
+   - ms.synctex.gz
+   - environment.yml
+   - .showyourwork/*
 
 
 # Externally-hosted datasets, e.g. on Zenodo
