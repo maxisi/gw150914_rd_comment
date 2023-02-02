@@ -1,5 +1,5 @@
 A Comment on [Cotesta et al (2022)](https://arxiv.org/abs/2201.00822). This manuscript was created using the [showyourwork](https://github.com/showyourwork/showyourwork) workflow, so that figures in the manuscript link directly to the scripts that created them.
-All code and data to reproduce these results are publicly available here (see [src/scripts]) and in Zenodo (https://doi.org/10.5281/zenodo.7597043).
+All code and data to reproduce these results are publicly available here (see [`src/scripts`](src/scripts) directory) and in Zenodo (https://doi.org/10.5281/zenodo.7597043).
 
 <p align="center">
 <a href="https://github.com/showyourwork/showyourwork">
