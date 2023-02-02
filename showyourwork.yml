@@ -35,7 +35,7 @@ datasets:
           GW150914:
             3W220221:
               posterior_samples.dat:
-  10.5072/zenodo.1153477:
+  10.5281/zenodo.7597043:
     destination: src/data
     contents:
       figure1.tar.gz:
