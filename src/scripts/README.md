@@ -37,7 +37,7 @@ The results plotted by the scripts here were originally produced by the
 _[ringdown](https://github.com/maxisi/ringdown)_ or
 _[pyRing](https://git.ligo.org/lscsoft/pyring)_ software packages. Further
 information to reproduce those results from LIGO strain data is provided in the
-Zenodo (https://doi.org/10.5281/zenodo.7597043), where the results of the fits
-are hosted.
+Zenodo data release (https://doi.org/10.5281/zenodo.7597043), where the results 
+of the fits are hosted.
 
 See also the [_ringddown_ documentation](https://ringdown.readthedocs.io/en/latest/index.html) and the [_pyRing_ documentation](https://lscsoft.docs.ligo.org/pyring/).
