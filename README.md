@@ -25,5 +25,5 @@ compile the manuscript. Each figure caption contains two links: one
 to the dataset stored on zenodo used in the corresponding figure,
 and the other to the script used to make the figure (at the commit
 corresponding to the current build of the manuscript). The datasets
-are stored at https://doi.org/XXXXXX.
+are stored at https://doi.org/10.5281/zenodo.7597043.
 
