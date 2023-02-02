@@ -1,13 +1,9 @@
 % Define document class
 \documentclass[aps,prd,twocolumn,superscriptaddress,preprintnumbers,floatfix,nofootinbib]{revtex4-2}
-%\documentclass[twocolumn]{aastex631}
 \usepackage{showyourwork}
 \usepackage{aas_macros}
 \usepackage{graphicx}
 \usepackage{amsmath}
-%\usepackage{subcaption}
-%\usepackage{mdwlist}
-%\usepackage[caption=false]{subfig}
 \usepackage{siunitx}
 \usepackage{placeins}
 \usepackage{color}
@@ -15,16 +11,12 @@
 \usepackage{dcolumn}
 \usepackage{tensor}
 \usepackage{bm}
-%\usepackage{MnSymbol}
 \usepackage{microtype}
 \usepackage{etoolbox}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
 \usepackage{accents}
 \usepackage[normalem]{ulem}
-%\usepackage[dvipsnames]{xcolor}
-%\usepackage[colorlinks,urlcolor=NavyBlue,citecolor=NavyBlue,linkcolor=NavyBlue,pdfusetitle]{hyperref}
-%\usepackage[all]{hypcap}
 \usepackage[inline]{enumitem}
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
@@ -34,20 +26,15 @@
 % Begin!
 \begin{document}
 
-% Title
-\title{An open source scientific article}
+\title{Comment on ``Analysis of Ringdown Overtones in GW150914''}
 
-% Main body with filler text
 \textbf{Comment on ``Analysis of Ringdown Overtones in GW150914''}
 \emph{M.~Isi, W.~M.~Farr (Flatiron Institute)}
 
 Reference \cite{Cotesta:2022pci} reanalyzes the GW150914 ringdown, arguing against the presence of an overtone and suggesting claims of its detection in \cite{Isi:2019aib} were driven by noise.
-% Here we show that those conclusions were based on a flawed analysis of the LIGO data, and on erroneous expectations for the evolution of the overtone amplitude posterior as a function of analysis start time.
 Here we point out a number of technical errors in that analysis, including a software bug, and show that features
-% of the overtone posterior
 highlighted as problematic are in fact expected and encountered in simulated data.
 After fixes, the code in \cite{Cotesta:2022pci} produces results consistent with the presence of the overtone as in \cite{Isi:2019aib,Isi:2022mhy,Finch:2022ynt}, undermining the conclusions in \cite{Cotesta:2022pci}.
-%Altogether, these findings undermine the central conclusions in \cite{Cotesta:2022pci}.
 
 Out of the different indicators for the overtone presented in
 \cite{Isi:2019aib}, Ref.~\cite{Cotesta:2022pci} focuses on the posterior on the
@@ -60,9 +47,7 @@ spite of \cite{Cotesta:2022pci} claiming to emulate the analysis in
 \cite{Isi:2019aib}.
 
 In a response \cite{Isi:2022mhy}, we subsequently failed to replicate the observations in \cite{Cotesta:2022pci} with a setup mimicking \cite{Isi:2019aib}; more alarmingly, even when using the exact settings and software as in \cite{Cotesta:2022pci}, we remained unable to reproduce the posterior shown in \cite{Cotesta:2022pci} for the reference time in \cite{Isi:2019aib}.
-% This can only mean that either the posterior was not correctly sampled, or that the two analyses were not based on the same data.
 
-%Starting from the configuration file released in \cite{Cotesta:2022pci},
 We have now established that the analysis in \cite{Cotesta:2022pci} that is reported as
 analogous to that in \cite{Isi:2019aib} actually
 (i) started at a different time ($\Delta t_{\rm start}^{\rm H1} = -1.2 M$; $t_{\rm H1} = 1126259462.22828 \, \mathrm{s}$),
@@ -97,18 +82,12 @@ indicate the presence of an overtone.''
 \end{figure}
 
 Both \textsc{pyRing} and \textsc{ringdown} favor $A_1 > 0$ over a broad range of start times after the peak, as identified in either  \cite{Isi:2022mhy} or  \cite{Cotesta:2022pci}:
-%(Hanford GPS times of 1126259462.423 s or 1126259462.42323 s, respectively):
 the significance, as evaluated from the $A_1$ posterior, does not ultimately drop below $2\sigma$ until {${\sim}10\,\mathrm{ms}$} after the reference time in \cite{Isi:2022mhy}, consistent with the expected decay of this mode (Fig.~\ref{fig:variation}, top).
 
 Reference \cite{Cotesta:2022pci} argues that the overtone detection in \cite{Isi:2019aib} was ``noise dominated'' because the ``amplitude is sensitive to changes in the starting time much smaller than the overtone damping time.''
 However, the variation that remains after fixing the timing problems in \cite{Cotesta:2022pci} is expected: because different data are processed for different start times, the posterior will jitter due to high frequency noise.
-%, the timescale over which the $A_1$ posterior evolves is determined not only by the decay of the tone, but by the noise.
 With data sampled at 16 kHz, as in \cite{Cotesta:2022pci}, the $A_1$ posterior may vary over times as short as $\approx 0.1\, \mathrm{ms}$---faster than for the 2 kHz sampling rate in \cite{Isi:2019aib,Isi:2022mhy}.
 We demonstrate this with simulated damped sinusoids in synthetic noise, showing similar fluctuations as for GW150914 (Fig.~\ref{fig:variation}, bottom).
-
-% The related objection ``that noise can indeed induce artificial evidence for an overtone'' is simply stating the basic fact that noise necessarily shifts the inferred $A_1$ value around. The important point is that the probability of a given fluctuation is quantified by the posterior, when computed correctly.
-% % For any given set of data, the posterior accounts for this probability by construction.
-% % In expectation, Gaussian noise will mimic a $1\sigma$ detection 32\% of the time, a $2\sigma$ detection 5\% of the time, and so on; this is consistent with the injections in \cite{Cotesta:2022pci,Isi:2022mhy,Finch:2022ynt}.
 
 In summary, both key points in \cite{Cotesta:2022pci} (namely, that there is no evidence for $A_1 > 0$ at any time after the peak, and that posterior variability indicates the result was noise-dominated) were drawn from faulty posteriors affected by erroneous settings and a software bug.
 These errors conspired to spuriously exacerbate the $A_1$ posterior width and sensitivity to start time.
