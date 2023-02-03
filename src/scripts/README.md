@@ -10,7 +10,7 @@ related as follows:
 
 ```mermaid
 graph TD;
-    10.5281/zenodo.7597043-->figure_prep.py;
+    10.5281/zenodo.7597043-->figure1_prep.py;
     figure1_prep.py-->figure1.py;
     10.5281/zenodo.7597043-->figure2.py
     10.5281/zenodo.6949492-->finchmoore1.py;
