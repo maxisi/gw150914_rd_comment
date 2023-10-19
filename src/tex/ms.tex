@@ -67,8 +67,8 @@ indicate the presence of an overtone.''
   \caption{\emph{Top:} correct 16 kHz $A_1$ posterior at the reference time $t_{\rm ref}$ in \cite{Isi:2019aib} computed by \textsc{ringdown} (solid) and \textsc{pyRing} (dashed), contrasted with the incorrect posterior in \cite{Cotesta:2022pci} (dotted), as in the second panel of Supplement Fig.~4.
   \emph{Bottom:}
   besides failing to target $t_\mathrm{ref}$, results in~\cite{Cotesta:2022pci} suffered from a bug that mislabeled LIGO timestamps and analyzed insufficient data (length $T = 0.1\,{\rm s}$); the bottom panel shows the effect of fixing each of these issues, to eventually yield the true $A_1$ posterior at $t_0 = t_{\rm ref} - 0.5 M$ (thick green), which differs only slightly from the intended target at $t_0 = t_{\rm ref}$ (top blue).
-  \label{fig:reftime}
   \script{figure1.py}
+  \label{fig:reftime}
 }
 \end{figure}
 
@@ -77,8 +77,8 @@ indicate the presence of an overtone.''
   \caption{$A_1$ posterior median (line) and 68\% HPD (band) for different fit times $t_0$ relative to $t_{\rm ref} = 1126259462.423 \, \mathrm{s}$ (abscissa). \emph{Top}: GW150914 analyzed at 2 kHz (blue) and 16 kHz (gray), compared to the result in \cite{Finch:2022ynt} (dots); a dashed line marks the time used in \cite{Cotesta:2022pci} and incorrectly labeled as $t_{\rm ref}$ (solid line); a dot-dashed line shows the the peak time estimate in \cite{Cotesta:2022pci}.
   \emph{Bottom}: simulation of two-damped sinusoids drawn from a GW150914 posterior without noise (green) and in synthetic LIGO noise (gray) at 16 kHz; to avoid an abrupt start, the injection is a ``ring-up'' before $t_0 = t_{\rm ref}$, as in Fig.~10 in \cite{Isi:2021iql}.
   The GW150914 analyses prefer the overtone over a broad set of times around the inferred peak (top), and the posterior tracks the decay of the mode plus, for the 16 kHz runs, additional jitter from high frequency noise, consistent with damped sinusoids in Gaussian noise (bottom).}
-  \label{fig:variation}
   \script{figure2.py}
+  \label{fig:variation}
 \end{figure}
 
 Both \textsc{pyRing} and \textsc{ringdown} favor $A_1 > 0$ over a broad range of start times after the peak, as identified in either  \cite{Isi:2022mhy} or  \cite{Cotesta:2022pci}:
