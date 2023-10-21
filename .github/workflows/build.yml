@@ -12,13 +12,13 @@ jobs:
     concurrency: showyourwork-${{ github.ref }}
     steps:
       - name: Checkout
-        uses: actions/checkout@202dc7105b319bea583f0e406d42a0f8a6c0fa5a
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Build the article PDF
         id: build
-        uses: showyourwork/showyourwork-action@v1
+        uses: showyourwork/showyourwork-action@202dc7105b319bea583f0e406d42a0f8a6c0fa5a
         with:
           showyourwork-spec: git+https://github.com/maxisi/showyourwork.git
           article-cache-number: 1
