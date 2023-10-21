@@ -1,3 +1,7 @@
+channels:
+  - conda-forge
+conda:
+  channel_priority: strict
 dependencies:
   - conda-forge::numpy
   - conda-forge::pip
