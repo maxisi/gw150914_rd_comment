@@ -5,7 +5,7 @@ conda:
 dependencies:
   - conda-forge::numpy
   - conda-forge::pip
-  - conda-forge::python=3
+  - conda-forge::python=3.9
   - arviz
   - seaborn
   - pandas
