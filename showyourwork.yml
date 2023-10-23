@@ -1,5 +1,5 @@
 # Enable rule caching on Zenodo?
-cache_on_zenodo: true
+cache_on_zenodo: false
 
 # Workflow graph (DAG) generation
 dag:
@@ -75,7 +75,7 @@ dependencies:
 ms_name: ms
 
 # Optimize DAG by removing unnecessary jobs upstream of cache hits?
-optimize_caching: false
+optimize_caching: true
 
 # Overleaf sync settings
 overleaf:
