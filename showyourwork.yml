@@ -75,7 +75,7 @@ dependencies:
 ms_name: ms
 
 # Optimize DAG by removing unnecessary jobs upstream of cache hits?
-optimize_caching: true
+optimize_caching: false
 
 # Overleaf sync settings
 overleaf:
