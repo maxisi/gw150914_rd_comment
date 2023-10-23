@@ -12,7 +12,8 @@ dependencies:
   - h5py
   - scipy
   - tqdm
-  - qnm
   - pytables
   - pip:
       - matplotlib
+      - qnm
+      - numba
